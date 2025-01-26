@@ -4,7 +4,7 @@ const connectDB = async () => {
     let connected = false;
     while (!connected) {
         try {
-            await mongoose.connect(process.env.MONGO_URI, {
+            await mongoose.connect("mongodb+srv://muhammadnehal610:nehalnehal@mydb.opigg.mongodb.net/Hackathon", {
                 useNewUrlParser: true,
                 useUnifiedTopology: true,
                 serverSelectionTimeoutMS: 5000, // Retry every 5 seconds
