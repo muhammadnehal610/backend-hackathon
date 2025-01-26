@@ -3,9 +3,15 @@ import connectDB from './config/connectDB.js';
 import visitorRoutes from "./routes/visitorRoutes.js";
 import userRoute from "./routes/authRoutes.js";
 import { configDotenv } from 'dotenv';
+import cors from 'cors'
 configDotenv()
 const app = express();
-
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Allow requests from this origin
+    credentials: true, // If cookies or auth headers are needed
+  })
+);
 connectDB();
 
 // Middleware
